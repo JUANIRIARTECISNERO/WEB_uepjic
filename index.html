@@ -30,12 +30,10 @@
             background-color: var(--blanco);
         }
 
-        /* Header */
         header {
             background: linear-gradient(135deg, var(--verde-principal), var(--azul-principal));
             color: var(--blanco);
             padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -53,15 +51,16 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .logo {
-           width: 250px;
-           height: 250px;
+           width: 140px;
+           height: 140px;
            border-radius: 50%;
            overflow: hidden;
-           box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+           background: transparent;
+           box-shadow: none; /* 🔧 Quitamos la sombra oval */
         }
 
         .logo img {
@@ -74,8 +73,8 @@
         .logo-text {
             font-size: 1.6rem;
             font-weight: 700;
-            letter-spacing: 0.5px;
-            line-height: 1.2;
+            line-height: 1.3;
+            text-align: left;
         }
 
         .slogan {
@@ -83,20 +82,19 @@
             opacity: 0.95;
             margin-top: 0.3rem;
             font-style: italic;
-            letter-spacing: 0.5px;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 1.8rem;
+            gap: 1.2rem;
         }
 
         nav a {
             color: var(--blanco);
             text-decoration: none;
             font-weight: 500;
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 0.9rem;
             border-radius: 5px;
             transition: all 0.3s ease;
             font-size: 0.95rem;
@@ -111,9 +109,9 @@
             color: var(--verde-principal);
         }
 
-        /* Hero Section */
+        /* HERO */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
                         url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1200');
             background-size: cover;
             background-position: center;
@@ -122,625 +120,311 @@
             padding: 4rem 1rem;
         }
 
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            opacity: 0.95;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem; }
 
         .cta-button {
-            display: inline-block;
             background: var(--verde-secundario);
             color: var(--blanco);
             padding: 1rem 2rem;
             border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            font-size: 1.1rem;
         }
 
-        .cta-button:hover {
-            background: var(--verde-principal);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Main Content */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+        main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
 
         .section {
             margin-bottom: 3rem;
             padding: 2rem;
             background: var(--blanco);
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .section:hover {
-            transform: translateY(-5px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .section-title {
             color: var(--verde-principal);
             margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
             border-bottom: 3px solid var(--azul-secundario);
             display: inline-block;
             font-size: 1.8rem;
         }
 
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .about-text {
-            line-height: 1.8;
-        }
-
-        .about-text p {
-            margin-bottom: 1rem;
-            font-size: 1.05rem;
-        }
-
-        .about-image {
-            border-radius: 10px;
-            height: 300px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-
-        .about-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .about-image:hover img {
-            transform: scale(1.05);
-        }
-
-        .about-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-            padding: 1rem;
-            color: white;
-            font-weight: 500;
-        }
-
-        /* Niveles Educativos Section */
-        .niveles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .nivel-card {
-            background: var(--gris-claro);
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .nivel-card:hover {
-            background: var(--blanco);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transform: translateY(-3px);
-        }
-
-        .nivel-card i {
-            font-size: 2.5rem;
-            color: var(--verde-principal);
-            margin-bottom: 1rem;
-        }
-
-        .nivel-card h3 {
-            color: var(--azul-principal);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        .nivel-card p {
-            color: var(--gris-oscuro);
-            font-size: 0.95rem;
-        }
-
-        /* Vision and Mission Section */
-        .vision-mision-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .vision, .mision {
-            background: var(--gris-claro);
-            padding: 1.5rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .vision:hover, .mision:hover {
-            background: var(--blanco);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .vision h3, .mision h3 {
-            color: var(--azul-principal);
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
-        }
-
-        .vision p, .mision p {
-            font-style: italic;
-            line-height: 1.8;
-            font-size: 1.05rem;
-            color: var(--gris-oscuro);
-            font-weight: 500;
-        }
-
-        .rif-codigo {
-            grid-column: 1 / -1;
-            text-align: center;
-            margin-top: 1.5rem;
-            padding: 1rem;
-            background: var(--gris-claro);
-            border-radius: 8px;
-            font-weight: 600;
-            color: var(--verde-principal);
-            font-size: 1.1rem;
-        }
-
-        .rif-code-container {
-            display: flex;
-            justify-content: center;
-            gap: 2.5rem;
-            flex-wrap: wrap;
-        }
-
-        .rif-code-container span {
-            display: inline-block;
-        }
-
-        /* Contact Section */
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .contact-card {
-            background: var(--gris-claro);
-            padding: 1.5rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .contact-card:hover {
-            background: var(--blanco);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-card i {
-            font-size: 2rem;
-            color: var(--verde-principal);
-            margin-bottom: 1rem;
-        }
-
-        .contact-card h3 {
-            color: var(--azul-principal);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        .contact-card p, .contact-card a {
-            color: var(--gris-oscuro);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
-            transition: color 0.3s ease;
-            font-size: 1.05rem;
-        }
-
-        .contact-card a:hover {
-            color: var(--verde-principal);
-        }
-
-        /* Hours Section */
-        .hours-section {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .hours-section h3 {
-            color: var(--azul-principal);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-
-        .hours-text {
-            font-size: 1.2rem;
-            color: var(--verde-principal);
-            font-weight: 600;
-        }
-
-        /* Social Media */
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-            justify-content: center;
-        }
-
-        .social-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--azul-principal);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--blanco);
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .social-icon.facebook { background: #3b5998; }
-        .social-icon.instagram { background: #e1306c; }
-        .social-icon:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Footer */
         footer {
             background: var(--gris-oscuro);
             color: var(--blanco);
             text-align: center;
             padding: 2rem;
-            margin-top: 2rem;
-        }
-
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
         }
 
         .footer-logo {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
-            margin-bottom: 1rem;
             color: var(--verde-secundario);
-            letter-spacing: 0.5px;
-        }
-
-        .copyright {
-            opacity: 0.7;
-            margin-top: 1rem;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 1rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .section {
-                padding: 1.5rem;
-            }
-            
-            .vision-mision-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .rif-code-container {
-                gap: 1.5rem;
-            }
-            
-            .niveles-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            nav ul {
-                gap: 0.5rem;
-            }
-
-            nav a {
-                padding: 0.3rem 0.8rem;
-                font-size: 0.85rem;
-            }
-
-            .logo-text {
-                font-size: 1.3rem;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Header with Navigation -->
-    <header>
-        <div class="header-container">
-            <div class="logo-container">
-                <div class="logo">
-                    <img src="logo.png" alt="Logo Unidad Educativa Privada, "Juan Iriarte y Cisnero"">
-                </div>
-                <div>
-                    <div class="logo-text">UNIDAD EDUCATIVA PRIVADA, "JUAN IRIARTE Y CISNERO"</div>
-                    <div class="slogan">"Educando para la vida, Sembrando Amor"</div>
-                </div>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#inicio" class="active">Inicio</a></li>
-                    <li><a href="#quienes-somos">Quiénes Somos</a></li>
-                    <li><a href="#niveles">Niveles Educativos</a></li>
-                    <li><a href="#vision-mision">Visión y Misión</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                    <li><a href="#horarios">Horarios</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <h1>Bienvenidos a Unidad Educativa Privada, "Juan Iriarte y Cisnero"</h1>
-        <p>Ofrecemos educación integral basada en principios cristianos para formar líderes del mañana</p>
-        <a href="#contacto" class="cta-button">Contáctanos</a>
+<header>
+    <div class="header-container">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo Unidad Educativa Privada Juan Iriarte y Cisnero">
+            </div>
+            <div>
+                <div class="logo-text">UNIDAD EDUCATIVA PRIVADA<br>JUAN IRIARTE Y CISNERO</div>
+                <div class="slogan">"Educando para la vida, Sembrando Amor"</div>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio" class="active">Inicio</a></li>
+                <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                <li><a href="#niveles">Niveles</a></li>
+                <li><a href="#vision-mision">Visión</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero" id="inicio">
+    <h1>Bienvenidos a la Unidad Educativa Privada</h1>
+    <p>Formamos líderes con valores cristianos y excelencia académica</p>
+    <a href="#contacto" class="cta-button">Contáctanos</a>
+</section><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad Educativa Privada, "Juan Iriarte y Cisnero"</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --verde-principal: #2E7D32;
+            --verde-secundario: #4CAF50;
+            --azul-principal: #1976D2;
+            --azul-secundario: #2196F3;
+            --blanco: #FFFFFF;
+            --gris-claro: #F5F5F5;
+            --gris-medio: #E0E0E0;
+            --gris-oscuro: #212121;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--blanco);
+            color: var(--gris-oscuro);
+            line-height:1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--verde-principal), var(--azul-principal));
+            color: var(--blanco);
+            padding:1rem 0;
+            position:sticky;
+            top:0;
+            z-index:1000;
+        }
+
+        .header-container {
+            max-width:1200px;
+            margin:auto;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:0 2rem;
+        }
+
+        .logo-container {
+            display:flex;
+            align-items:center;
+            gap:2rem;
+            text-align:center;
+        }
+
+        .logo {
+            width:180px;
+            height:180px;
+            border-radius:50%;
+            overflow:hidden;
+            box-shadow:none; /* SIN SOMBRA */
+        }
+
+        .logo img {
+            width:100%;
+            height:100%;
+            object-fit:contain;
+        }
+
+        .logo-text {
+            font-size:1.6rem;
+            font-weight:700;
+            letter-spacing:1px;
+            line-height:1.3;
+            text-align:center;
+            text-transform:uppercase;
+        }
+
+        .slogan {
+            font-size:0.95rem;
+            margin-top:0.3rem;
+            font-style:italic;
+            opacity:.9;
+            text-align:center;
+        }
+
+        nav ul {
+            list-style:none;
+            display:flex;
+            gap:1.2rem;
+        }
+
+        nav a {
+            color:var(--blanco);
+            text-decoration:none;
+            padding:.4rem .8rem;
+            border-radius:4px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background:var(--blanco);
+            color:var(--verde-principal);
+        }
+
+        .hero {
+            background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+            url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1200');
+            background-size:cover;
+            background-position:center;
+            color:white;
+            text-align:center;
+            padding:4rem 1rem;
+        }
+
+        .hero h1 { font-size:2.4rem; margin-bottom:1rem; }
+        .hero p { font-size:1.2rem; max-width:800px; margin:auto; }
+
+        .cta-button {
+            display:inline-block;
+            margin-top:1.5rem;
+            background:var(--verde-secundario);
+            color:white;
+            padding:1rem 2rem;
+            border-radius:5px;
+            text-decoration:none;
+            font-weight:600;
+        }
+
+        main { max-width:1200px; margin:auto; padding:2rem; }
+
+        .section {
+            margin-bottom:3rem;
+            padding:2rem;
+            background:white;
+            border-radius:10px;
+            box-shadow:0 2px 10px rgba(0,0,0,.05);
+        }
+
+        .section-title {
+            color:var(--verde-principal);
+            margin-bottom:1rem;
+            border-bottom:3px solid var(--azul-secundario);
+            display:inline-block;
+            font-size:1.8rem;
+        }
+
+        footer {
+            background:#212121;
+            color:white;
+            text-align:center;
+            padding:2rem;
+        }
+
+        .footer-logo {
+            font-size:1.6rem;
+            font-weight:700;
+            color:var(--verde-secundario);
+        }
+
+        @media(max-width:768px){
+            .header-container{flex-direction:column;}
+            nav ul{flex-wrap:wrap; justify-content:center;}
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo Juan Iriarte y Cisnero">
+            </div>
+            <div>
+                <div class="logo-text">Unidad Educativa Privada<br>Juan Iriarte y Cisnero</div>
+                <div class="slogan">Educando para la vida, Sembrando Amor</div>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio" class="active">Inicio</a></li>
+                <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                <li><a href="#niveles">Niveles</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero" id="inicio">
+    <h1>Bienvenidos a la Unidad Educativa Privada<br>Juan Iriarte y Cisnero</h1>
+    <p>Formando líderes con valores cristianos y excelencia académica.</p>
+    <a href="#contacto" class="cta-button">Contáctanos</a>
+</section>
+
+<main>
+    <section class="section" id="quienes-somos">
+        <h2 class="section-title">Quiénes Somos</h2>
+        <p>Somos una institución cristiana dedicada a formar estudiantes íntegros en lo académico, espiritual y humano.</p>
     </section>
 
-    <!-- Main Content -->
-    <main>
-        <!-- About Section with Image -->
-        <section class="section" id="quienes-somos">
-            <h2 class="section-title">Quiénes Somos</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>La Unidad Educativa Privada, "Juan Iriarte y Cisnero" es una institución educativa dedicada a proporcionar una formación integral basada en valores cristianos y principios bíblicos.</p>
-                    <p>Nuestra misión es formar estudiantes no solo académicamente excelentes, sino también con un carácter sólido, comprometidos con su comunidad y con una visión de vida centrada en Cristo.</p>
-                    <p>Contamos con un equipo de educadores altamente capacitados y comprometidos con la excelencia educativa y el desarrollo espiritual de cada estudiante.</p>
-                    <p>En Juan Iriarte y Cisnero, creemos que cada niño es único y tiene un propósito especial. Nuestro enfoque personalizado garantiza que cada estudiante reciba la atención y el apoyo necesarios para alcanzar su máximo potencial.</p>
-                </div>
-                <div class="about-image">
-                    <img src="about-image.jpg" alt="Estudiantes en el aula">
-                    <div class="about-overlay">Nuestra comunidad educativa</div>
-                </div>
-            </div>
-        </section>
+    <section class="section" id="niveles">
+        <h2 class="section-title">Niveles Educativos</h2>
+        <p>Inicial, Básica, Media y Diversificada.</p>
+    </section>
 
-        <!-- Niveles Educativos Section -->
-        <section class="section" id="niveles">
-            <h2 class="section-title">Niveles Educativos</h2>
-            <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">
-                Ofrecemos educación completa -Inicial, Basica, Media y Diversificada-
-            </p>
-            <div class="niveles-grid">
-                <div class="nivel-card">
-                    <i class="fas fa-child"></i>
-                    <h3>Primer Nivel</h3>
-                    <p>Edad 4-5 años | Educación inicial</p>
-                </div>
-                <div class="nivel-card">
-                    <i class="fas fa-child"></i>
-                    <h3>Segundo Nivel</h3>
-                    <p>Edad 5-6 años | Educación inicial</p>
-                </div>
-                <div class="nivel-card">
-                    <i class="fas fa-child"></i>
-                    <h3>Tercer Nivel</h3>
-                    <p>Edad 6-7 años | Educación inicial</p>
-                </div>
-                <div class="nivel-card">
-                    <i class="fas fa-book"></i>
-                    <h3>1er a 6to Grado</h3>
-                    <p>Primaria completa | Educación básica</p>
-                </div>
-                <div class="nivel-card">
-                    <i class="fas fa-user-graduate"></i>
-                    <h3>1er Año</h3>
-                    <p>Primer año de bachillerato</p>
-                </div>
-                <div class="nivel-card">
-                    <i class="fas fa-user-graduate"></i>
-                    <h3>2do Año</h3>
-                    <p>Segundo año de bachillerato</p>
-                </div>
-                <div class="nivel-card">
-                    <i class="fas fa-user-graduate"></i>
-                    <h3>3er Año</h3>
-                    <p>Tercer año de bachillerato</p>
-                </div>
-                <div class="nivel-card">
-                    <i class="fas fa-user-graduate"></i>
-                    <h3>4to Año</h3>
-                    <p>Cuarto año de bachillerato</p>
-                </div>
-                <div class="nivel-card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>5to Año</h3>
-                    <p>Quinto año de bachillerato | Graduación</p>
-                </div>
-            </div>
-        </section>
+    <section class="section" id="contacto">
+        <h2 class="section-title">Contacto</h2>
+        <p><strong>Dirección:</strong> Calle Colombia N°3, Ciudad Tablitas</p>
+        <p><strong>Email:</strong> uepjicmaranatha2223@gmail.com</p>
+        <p><strong>Tel:</strong> +58 412 380 7418</p>
+    </section>
+</main>
 
-        <!-- Vision and Mission Section -->
-        <section class="section" id="vision-mision">
-            <h2 class="section-title">Visión y Misión</h2>
-            <div class="vision-mision-content">
-                <div class="vision">
-                    <h3>Visión</h3>
-                    <p>"Ser un centro formativo integral, enfocado en el 'desarrollo axiológico cristiano', que motive con su ejemplo al Colectivo Institucional a formar parte del 5%, que tienen un propósito de vida."</p>
-                </div>
-                <div class="mision">
-                    <h3>Misión</h3>
-                    <p>"Impartir una educación integral, siguiendo 'el método de Cristo', que inspire al educando a alcanzar su desarrollo cognitivo, personal y espiritual, presto para servir a Dios y a la humanidad."</p>
-                </div>
-                <div class="rif-codigo">
-                    <div class="rif-code-container">
-                        <span><strong>RIF:</strong> J-503214279</span>
-                        <span><strong>Código:</strong> PD15970320</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+<footer>
+    <div class="footer-logo">Unidad Educativa Privada Juan Iriarte y Cisnero</div>
+    <p>&copy; 2026 – Todos los derechos reservados</p>
+</footer>
 
-        <!-- Contact Section -->
-        <section class="section" id="contacto">
-            <h2 class="section-title">Contáctanos</h2>
-            <div class="contact-info">
-                <div class="contact-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Dirección</h3>
-                    <a href="https://www.google.com/maps?q=Calle+Colombia+numero+3,+Sector+Ciudad+tablitas" target="_blank" style="color: var(--gris-oscuro); text-decoration: none; font-size: 1.05rem;">
-                        Calle Colombia número 3, Sector Ciudad Tablitas
-                    </a>
-                </div>
-                
-                <div class="contact-card">
-                    <i class="fas fa-phone"></i>
-                    <h3>Teléfono</h3>
-                    <a href="https://wa.me/5804123807418" target="_blank" style="font-size: 1.05rem;">
-                        <i class="fab fa-whatsapp"></i> +58-04123807418
-                    </a>
-                    <a href="https://wa.me/5804163832200" target="_blank" style="font-size: 1.05rem;">
-                        <i class="fab fa-whatsapp"></i> +58-04163832200
-                    </a>
-                </div>
-                
-                <div class="contact-card">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Correo Electrónico</h3>
-                    <a href="mailto:uepjicmaranatha2223@gmail.com" style="font-size: 1.05rem;">
-                        <i class="fas fa-envelope"></i> uepjicmaranatha2223@gmail.com
-                    </a>
-                </div>
-            </div>
+</body>
+</html>
 
-            <div class="social-links">
-                <a href="https://facebook.com" class="social-icon facebook" target="_blank">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://instagram.com" class="social-icon instagram" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-        </section>
+<main>
+    <section class="section" id="quienes-somos">
+        <h2 class="section-title">Quiénes Somos</h2>
+        <p>Somos una institución cristiana dedicada a la formación integral de niños y jóvenes.</p>
+    </section>
+</main>
 
-        <!-- Hours Section -->
-        <section class="section" id="horarios">
-            <h2 class="section-title">Horario de Atención</h2>
-            <div class="hours-section">
-                <h3>Atención al Público</h3>
-                <p class="hours-text">Lunes a Viernes | 8:00 AM - 12:00 PM | 2:00 PM - 5:00 PM</p>
-            </div>
-        </section>
-    </main>
+<footer>
+    <div class="footer-logo">UNIDAD EDUCATIVA PRIVADA JUAN IRIARTE Y CISNERO</div>
+    <p>&copy; 2026 Todos los derechos reservados.</p>
+</footer>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                UNIDAD EDUCATIVA PRIVADA, "JUAN IRIARTE Y CISNERO"
-            </div>
-            <p>"Educando para la vida, Sembrando Amor"</p>
-            <p>Calle Colombia número 3, Sector Ciudad Tablitas</p>
-            <p><strong>RIF:</strong> J-503214279 <strong>Código:</strong> PD15970320</p>
-            <div class="copyright">
-                &copy; 2026 Unidad Educativa Privada Juan Iriarte Cisnero. Todos los derechos reservados.
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Update active navigation link
-                    document.querySelectorAll('nav a').forEach(link => {
-                        link.classList.remove('active');
-                    });
-                    this.classList.add('active');
-                }
-            });
-        });
-
-        // Handle scroll for active navigation
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section');
-            const scrollPosition = window.scrollY + 100;
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-                const sectionId = section.getAttribute('id');
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    document.querySelectorAll('nav a').forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${sectionId}`) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>
